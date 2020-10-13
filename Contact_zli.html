@@ -8,6 +8,8 @@
               padding: 0;
               overflow: hidden;
               background-color: #333;
+              position: sticky;
+              top: 0;
             }
             
             li {
@@ -26,30 +28,52 @@
               background-color: #ddd;
               background-color: #111;
             }
-            
+            footer {
+              text-align: center;
+              padding: 3px;
+              background-color: #333;
+              color: white;
+            }
+            .col-container {
+                display: table; /* Make the container element behave like a table */
+                width: 100%; /* Set full-width to expand the whole page */
+            }
+
+            .col {
+                display: table-cell; /* Make elements inside the container behave like table cells */
+            }
             </style>
     </head>
     <body>
-        <ul>
-            <li><a href="Home_zli.html">Home</a></li>
-            <li><a href="Projekte_zli.html">Projekte</a></li>
-            <li><a href="Contact_zli.html">Contact</a></li>
-            <li><a href="AboutMe_zli.html">About</a></li>
-        </ul>
-        <div class="About">
-          
-            <h2>About me</h2>
-            <p>Mein Name ist Leandro Benedetto. Ich bin 15 Jahre alt und mache eine Ausbildung bei der SIX. Zurzeit bin ich im 1. Lehrjahr.  </p>
-            <div id="image">
-
-              <img src="Portrait.png" width="auto" height="400px" style="padding:0px 0px 0px 50px;">  
-                  <br>
-                  <br>
-                  <br>
-                  <br>
-        </div>
-        <div class="Contact"> 
-          <p>lol</p>
-        </div>       
+      <ul>
+        <li><a href="Home_zli.html">Home</a></li>
+        <li><a href="Projekte_zli.html">Projekte</a></li>
+        <li><a href="Contact_zli.html">Contact</a></li>
+        <li><a href="AboutMe_zli.html">About</a></li>
+    </ul>
+    <div class="col-container">
+      <div class="col">
+        <h2>Column 1</h2>
+        <p>Hello World</p>
+      </div>
+    
+      <div class="col">
+        <h2>Column 2</h2>
+        <p>Hello World!</p>
+        <p>Hello World!</p>
+        <p>Hello World!</p>
+        <p>Hello World!</p>
+      </div>
+    
+      <div class="col">
+        <h2>Column 3</h2>
+        <p>Some other text..</p>
+        <p>Some other text..</p>
+      </div>
+    </div>
+    <footer>
+      <p>Author: Hege Refsnes<br>
+      <a href="mailto:hege@example.com">hege@example.com</a></p>
+    </footer>
     </body>
 </html>
