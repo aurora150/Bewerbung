@@ -1,6 +1,11 @@
 <!doctype html>
 <html>
     <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Weather app</title>
+      <link rel="stylesheet" href="main.css" />
         <style>
             html, body {
               height: 100%;
@@ -61,12 +66,30 @@
     </head>
     <body>
       <ul>
-        <li><a href="Home_zli.html"><img src="NidRqA.jpg" alt="Space man" width="70" height="40"></a></li>
+        <li><a href="Home_zli.php"><img src="NidRqA.jpg" alt="Space man" width="70" height="40"></a></li>
         <li><a href="Projekte_zli.html">Projekte</a></li>
         <li><a href="Contact_zli.html">Contact</a></li>
         <li><a href="AboutMe_zli.html">About</a></li>
+        
       </ul>
     <img class="two" src="1170322.jpg" width="300" height="300">
+    <div class="app-wrap">
+          <header>
+            <input type="text" autocomplete="off" class="search-box" placeholder="Search for a city..." />
+          </header>
+          <main>
+            <section class="location">
+              <div class="city"></div>
+              <div class="date"></div>
+            </section>
+            <div class="current">
+              <div class="temp"><span>°c</span></div>
+              <div class="weather"></div>
+              <div class="hi-low"></div>
+            </div>
+          </main> 
+        </div>
+        <script src="main.js"></script>
     <div class="col-container">
       <div class="col">
         <h2>Column 1</h2>
@@ -77,9 +100,7 @@
       $data = json_decode($file);
       echo $data->joke;
       ?>
-      <script>
-        document.getElementById("API_News.json");
-        </script>
+      <div id="news"></div>
       <div class="col">
         <h2>Column 2</h2>
         <p>Hello World!</p>
@@ -94,6 +115,24 @@
         <p>Some other text..</p>
       </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        $.ajax({
+          url: "http://newsapi.org/v2/top-headlines",
+          data: {
+            country: "us",
+            apiKey: "1c22439bbd4448c889748fc80d548b8d"
+          },
+          success: function( result ) {
+              $( "#news" ).html( "<strong>" + result.articles[Math.floor(Math.random() * result.articles.length)].title + "</strong> NAICE" );
+              console.log(result.articles.length);
+          }
+        // var data = $.parseJSON(result);
+        //     console.log(result);
+        //   }
+        });
+        </script>
+    
     <footer>
       <p>Author: Hege Refsnes<br>
       <a href="mailto:hege@example.com">hege@example.com</a></p>
