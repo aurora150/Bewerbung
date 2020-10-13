@@ -1,0 +1,65 @@
+float xstart, xnoise, ystart, ynoise;    
+
+void setup() {    
+  size(800 , 600); 
+  smooth(); 
+  background(0); 
+  frameRate(24);
+  
+  xstart = random(10); 
+  ystart = random(10);
+  
+  background(0);  
+  
+  //clouds
+  xstart += 0.01;  
+  ystart += 0.01;
+  
+  xnoise = xstart; 
+  ynoise = ystart; 
+  
+  for (int y = 0; y <= height; y+=5) { 
+    ynoise += 0.1;                                     
+    xnoise = xstart; 
+    for (int x = 0; x <= width; x+=5) { 
+      xnoise += 0.1;     
+      drawPoint(x, y, noise(xnoise, ynoise));
+    }
+  }
+}
+
+void draw() {
+    //Moon
+      fill(250, 249, 235); 
+      circle(520, 287 ,100);
+      fill(212, 212, 212); 
+      circle(550, 287 ,60);
+     
+
+
+} 
+
+void drawPoint(float x, float y, float noiseFactor) {    
+  pushMatrix();
+  translate(x, y);
+  rotate(noiseFactor * radians(540));
+  float edgeSize = noiseFactor * 35;
+  float grey = 150 + (noiseFactor * 120);
+  float alph = 150 + (noiseFactor * 120);
+  noStroke();
+  fill(grey, alph);
+  ellipse(0, 0, edgeSize, edgeSize/2);
+  popMatrix();
+  
+      //Boden
+  fill(0, 0, 0); 
+  circle(500, 707 ,500);
+     //Haus 1
+     triangle(500, 380, 525, 350, 555, 380);
+     rect(500, 380, 55, 505);
+     //Haus 2
+     //Haus
+     rect(450, 420, 55, 505);
+     
+
+   }
