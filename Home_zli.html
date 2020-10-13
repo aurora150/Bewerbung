@@ -6,6 +6,7 @@
               height: 100%;
               margin: 0;
               padding: 0;
+
             }
 
             img.one {
@@ -21,7 +22,7 @@
               margin: 0;
               padding: 0;
               overflow: hidden;
-              background-color: #111;
+              background-color: #000;
               position: sticky;
               top: 0;
             }
@@ -45,7 +46,7 @@
             footer {
               text-align: center;
               padding: 3px;
-              background-color: #111;
+              background-color: rgb(0, 0, 0);
               color: white;
             }
             .col-container {
@@ -60,11 +61,10 @@
     </head>
     <body>
       <ul>
-        <li><a href="Home_zli.html">Home</a></li>
+        <li><a href="Home_zli.html"><img src="NidRqA.jpg" alt="Space man" width="70" height="40"></a></li>
         <li><a href="Projekte_zli.html">Projekte</a></li>
         <li><a href="Contact_zli.html">Contact</a></li>
         <li><a href="AboutMe_zli.html">About</a></li>
-        <img src="NidRqA.jpg" alt="Space man" width="70" height="50">
       </ul>
     <img class="two" src="1170322.jpg" width="300" height="300">
     <div class="col-container">
@@ -72,7 +72,14 @@
         <h2>Column 1</h2>
         <p>Hello World</p>
       </div>
-    
+      <?php
+      $file = file_get_contents("https://sv443.net/jokeapi/v2/joke/Programming,Pun?blacklistFlags=nsfw,religious,political,racist,sexist&type=single");
+      $data = json_decode($file);
+      echo $data->joke;
+      ?>
+      <script>
+        document.getElementById("API_News.json");
+        </script>
       <div class="col">
         <h2>Column 2</h2>
         <p>Hello World!</p>
